@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import '../components/center_element.dart';
 
 class PortfolioPage extends StatelessWidget {
-  const PortfolioPage({Key? key}) : super(key: key);
+  const PortfolioPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const CenterElement(
+      children: [],
+    );
   }
 }
