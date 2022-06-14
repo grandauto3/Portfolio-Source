@@ -1,11 +1,42 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'dart:io';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'portfolio_data.g.dart';
+
+@JsonSerializable()
 class PortfolioData {
   PortfolioData({
     required this.text,
-    required this.images,
+    this.imagePaths = const [],
+    this.images = const [],
   });
 
   String text;
+  List<String> imagePaths;
+  @JsonKey(ignore: true)
   List<Image> images;
+
+  static Future<PortfolioData> getData(String jsonPath) async {
+    final jsonString = await rootBundle.loadString(jsonPath);
+    print(jsonString);
+    final tmpData = PortfolioData.fromJson(jsonDecode(jsonString));
+
+    Iterable<Image> _getImages(List<String> paths) sync* {
+      for (var item in paths) {
+        yield Image.asset(item);
+      }
+    }
+
+    return PortfolioData(
+        text: tmpData.text, images: List.from(_getImages(tmpData.imagePaths)));
+  }
+
+  factory PortfolioData.fromJson(Map<String, dynamic> json) =>
+      _$PortfolioDataFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PortfolioDataToJson(this);
 }
