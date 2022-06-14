@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/portfolio_data.dart';
 import 'package:portfolio/pages/portfolio_page.dart';
 import 'homepage.dart';
 import 'package:beamer/beamer.dart';
@@ -13,12 +14,14 @@ class MyApp extends StatelessWidget {
       locationBuilder: RoutesLocationBuilder(
         routes: {
           '/': (ctx, state, data) => MyHomePage(
-                onEntryClicked: (id) {
-                  Beamer.of(ctx).beamToNamed('p/$id');
+                onEntryClicked: (id, portData) {
+                  Beamer.of(ctx).beamToNamed('p/$id', data: portData);
                 },
               ),
           '/p/:pageId': (ctx, state, data) {
-            return const PortfolioPage();
+            return PortfolioPage(
+              data: data as PortfolioData,
+            );
           },
         },
       ),
