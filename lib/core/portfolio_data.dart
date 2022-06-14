@@ -22,7 +22,7 @@ class PortfolioData {
 
   static Future<PortfolioData> getData(String jsonPath) async {
     final jsonString = await rootBundle.loadString(jsonPath);
-    print(jsonString);
+
     final tmpData = PortfolioData.fromJson(jsonDecode(jsonString));
 
     Iterable<Image> _getImages(List<String> paths) sync* {
