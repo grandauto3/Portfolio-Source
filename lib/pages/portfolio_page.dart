@@ -8,7 +8,7 @@ class PortfolioPage extends StatelessWidget {
     required this.data,
   }) : super(key: key);
 
-  final PortfolioData data;
+  final Future<PortfolioData> data;
 
   Iterable<Widget> _getExpandedWidgets(List<Widget> widgets) sync* {
     for (Widget item in widgets) {
@@ -23,28 +23,36 @@ class PortfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CenterElement(
-      children: [
-        Expanded(
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: List.from(
-                    _getExpandedWidgets(data.images),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(data.text),
-                ),
-              ),
-            ],
-          ),
-        )
-      ],
+    return FutureBuilder(
+      future: data,
+      builder: ((context, snapshot) {
+        return snapshot.hasData
+            ? CenterElement(
+                children: [
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: List.from(
+                              _getExpandedWidgets(
+                                  (snapshot.data as PortfolioData).images),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text((snapshot.data as PortfolioData).text),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              )
+            : Container();
+      }),
     );
   }
 }

@@ -9,7 +9,7 @@ class MyHomePage extends StatelessWidget {
     required this.onEntryClicked,
   }) : super(key: key);
 
-  final void Function(int id, PortfolioData data) onEntryClicked;
+  final void Function(int id, Future<PortfolioData> data) onEntryClicked;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +21,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               0,
-              PortfolioData(
-                text: 'Guten Tag',
-                images: [
-                  Image.asset('assets/images/1648653844985.png'),
-                  Image.asset('assets/images/1648653844985.png'),
-                ],
-              ),
+              PortfolioData.getData('json/test_data.json'),
             );
           },
         ),
@@ -36,10 +30,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               1,
-              PortfolioData(
-                text: '',
-                images: [],
-              ),
+              PortfolioData.getData('assets/json/test_data.json'),
             );
           },
         ),
@@ -48,10 +39,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               2,
-              PortfolioData(
-                text: '',
-                images: [],
-              ),
+              PortfolioData.getData('assets/json/test_data.json'),
             );
           },
         ),
@@ -60,10 +48,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               3,
-              PortfolioData(
-                text: '',
-                images: [],
-              ),
+              PortfolioData.getData('assets/json/test_data.json'),
             );
           },
         ),
@@ -72,10 +57,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               4,
-              PortfolioData(
-                text: '',
-                images: [],
-              ),
+              PortfolioData.getData('assets/json/test_data.json'),
             );
           },
         ),

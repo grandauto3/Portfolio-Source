@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               ),
           '/p/:pageId': (ctx, state, data) {
             return PortfolioPage(
-              data: data as PortfolioData,
+              data: data as Future<PortfolioData>,
             );
           },
         },
