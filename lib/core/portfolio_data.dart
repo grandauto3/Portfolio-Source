@@ -21,7 +21,13 @@ class PortfolioData {
   List<Image> images;
 
   static Future<PortfolioData> getData(String jsonPath) async {
-    final jsonString = await rootBundle.loadString(jsonPath);
+    String jsonString;
+
+    try {
+      jsonString = await rootBundle.loadString(jsonPath);
+    } catch (e) {
+      jsonString = await rootBundle.loadString('assets/' + jsonPath);
+    }
 
     final tmpData = PortfolioData.fromJson(jsonDecode(jsonString));
 
