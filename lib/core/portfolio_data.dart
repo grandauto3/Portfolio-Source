@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:portfolio/core/io/io_handler.dart';
 
 part 'portfolio_data.g.dart';
 
@@ -19,14 +19,8 @@ class PortfolioData {
   @JsonKey(ignore: true)
   List<Image> images;
 
-  static Future<PortfolioData> getData(String jsonPath) async {
-    String jsonString;
-
-    try {
-      jsonString = await rootBundle.loadString(jsonPath);
-    } catch (e) {
-      jsonString = await rootBundle.loadString('assets/' + jsonPath);
-    }
+  static Future<PortfolioData> getPortfolioData(String jsonPath) async {
+    String jsonString = await IOHandler.getStringData(jsonPath);
 
     final tmpData = PortfolioData.fromJson(jsonDecode(jsonString));
 

@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               0,
-              PortfolioData.getData('json/test_data.json'),
+              PortfolioData.getPortfolioData('json/test_data.json'),
             );
           },
         ),
@@ -31,7 +31,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               1,
-              PortfolioData.getData('json/test_data.json'),
+              PortfolioData.getPortfolioData('json/test_data.json'),
             );
           },
         ),
@@ -40,7 +40,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               2,
-              PortfolioData.getData('json/test_data.json'),
+              PortfolioData.getPortfolioData('json/test_data.json'),
             );
           },
         ),
@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               3,
-              PortfolioData.getData('json/test_data.json'),
+              PortfolioData.getPortfolioData('json/test_data.json'),
             );
           },
         ),
@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               4,
-              PortfolioData.getData('json/test_data.json'),
+              PortfolioData.getPortfolioData('json/test_data.json'),
             );
           },
         ),

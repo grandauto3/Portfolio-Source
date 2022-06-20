@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:portfolio/core/io/io_handler.dart';
 
 class MarkdownPage extends StatelessWidget {
-  const MarkdownPage({Key? key}) : super(key: key);
+  const MarkdownPage({
+    Key? key,
+    required this.mdPath,
+  }) : super(key: key);
+
+  final String mdPath;
 
   @override
   Widget build(BuildContext context) {
-    return const Markdown(
-        data: 'This might be a test '
-            '![imagee](resource:assets/images/1648653844985.png)');
+    return FutureBuilder(
+      future: IOHandler.getStringData(mdPath),
+      builder: (context, snapshot) {
+        return snapshot.hasData
+            ? Markdown(data: snapshot.data as String)
+            : Container();
+      },
+    );
   }
 }

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
             );
           },
           '/test': (ctx, state, data) {
-            return const MarkdownPage();
+            return const MarkdownPage(mdPath: 'md/test.md');
           }
         },
       ),
