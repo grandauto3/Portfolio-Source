@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   BeamerDelegate _createBeamerDelegate() {
     return BeamerDelegate(
+      setBrowserTabTitle: false,
       locationBuilder: RoutesLocationBuilder(
         routes: {
           '/': (ctx, state, data) => MyHomePage(
