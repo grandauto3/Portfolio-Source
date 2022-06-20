@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:markdown_widget/markdown_widget.dart';
 import 'package:portfolio/core/io/io_handler.dart';
 
 class MarkdownPage extends StatelessWidget {
@@ -16,7 +16,7 @@ class MarkdownPage extends StatelessWidget {
       future: IOHandler.getStringData(mdPath),
       builder: (context, snapshot) {
         return snapshot.hasData
-            ? Markdown(data: snapshot.data as String)
+            ? MarkdownWidget(data: snapshot.data as String)
             : Container();
       },
     );
