@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/portfolio_data.dart';
 import '../components/home_page_entry.dart';
@@ -59,6 +60,12 @@ class MyHomePage extends StatelessWidget {
               4,
               PortfolioData.getData('json/test_data.json'),
             );
+          },
+        ),
+        HomepageEntry(
+          title: 'Test',
+          onPressed: () {
+            Beamer.of(context, root: true).beamToNamed('/test');
           },
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/portfolio_data.dart';
+import 'package:portfolio/pages/markdown_page.dart';
 import 'package:portfolio/pages/portfolio_page.dart';
 import 'homepage.dart';
 import 'package:beamer/beamer.dart';
@@ -24,6 +25,9 @@ class MyApp extends StatelessWidget {
               data: data as Future<PortfolioData>,
             );
           },
+          '/test': (ctx, state, data) {
+            return const MarkdownPage();
+          }
         },
       ),
     );
