@@ -1,8 +1,10 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/portfolio_data.dart';
+import 'package:portfolio/core/data/portfolio_data.dart';
 import '../components/home_page_entry.dart';
 import '../components/center_element.dart';
+
+typedef OnEntryClickedCallback = void Function(int id, String dataPath);
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({
@@ -10,7 +12,7 @@ class MyHomePage extends StatelessWidget {
     required this.onEntryClicked,
   }) : super(key: key);
 
-  final void Function(int id, Future<PortfolioData> data) onEntryClicked;
+  final OnEntryClickedCallback onEntryClicked;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               0,
-              PortfolioData.getPortfolioData('json/test_data.json'),
+              'md/unity_level_editor.md',
             );
           },
         ),
@@ -31,7 +33,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               1,
-              PortfolioData.getPortfolioData('json/test_data.json'),
+              'md/test.md',
             );
           },
         ),
@@ -40,7 +42,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               2,
-              PortfolioData.getPortfolioData('json/test_data.json'),
+              'md/test.md',
             );
           },
         ),
@@ -49,7 +51,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               3,
-              PortfolioData.getPortfolioData('json/test_data.json'),
+              'md/test.md',
             );
           },
         ),
@@ -58,7 +60,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               4,
-              PortfolioData.getPortfolioData('json/test_data.json'),
+              'md/test.md',
             );
           },
         ),

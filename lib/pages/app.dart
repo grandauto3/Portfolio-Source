@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/portfolio_data.dart';
+import 'package:portfolio/core/data/portfolio_data.dart';
 import 'package:portfolio/pages/markdown_page.dart';
 import 'package:portfolio/pages/portfolio_page.dart';
 import 'homepage.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
               ),
           '/p/:pageId': (ctx, state, data) {
             return PortfolioPage(
-              data: data as Future<PortfolioData>,
+              dataPath: data as String,
             );
           },
           '/test': (ctx, state, data) {
