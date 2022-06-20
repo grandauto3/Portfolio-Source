@@ -1,6 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../components/center_element.dart';
 import '../core/io/io_handler.dart';
 
@@ -21,7 +22,12 @@ class PortfolioPage extends StatelessWidget {
             future: IOHandler.getStringData(dataPath),
             builder: (context, snapshot) {
               return snapshot.hasData
-                  ? Markdown(data: snapshot.data as String)
+                  ? Markdown(
+                      data: snapshot.data as String,
+                      onTapLink: (text, url, title) {
+                        launchUrl(Uri.parse(url!));
+                      },
+                    )
                   : Container();
             },
           ),
