@@ -58,10 +58,8 @@ class MyHomePage extends StatelessWidget {
         HomepageEntry(
           title: 'Portfolio source',
           onPressed: () {
-            onEntryClicked(
-              4,
-              'md/test.md',
-            );
+            launchUrl(
+                Uri.parse('https://github.com/grandauto3/Portfolio-Source'));
           },
         ),
         HomepageEntry(
