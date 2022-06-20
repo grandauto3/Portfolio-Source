@@ -892,3 +892,8 @@ DerivedData/
 ##ignore json_serialization files
 *.g.dart
 *.cmake
+.flutter-plugins-dependencies
+
+lib/generated_plugin_registrant.dart
+
+windows/flutter/generated_plugin_registrant.cc
