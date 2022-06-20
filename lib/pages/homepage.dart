@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               1,
-              'md/test.md',
+              'md/godarena.md',
             );
           },
         ),

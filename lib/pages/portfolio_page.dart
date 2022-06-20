@@ -1,7 +1,9 @@
 import 'package:beamer/beamer.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:markdown_widget/markdown_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import '../components/center_element.dart';
 import '../core/io/io_handler.dart';
 
@@ -30,6 +32,19 @@ class PortfolioPage extends StatelessWidget {
                           url,
                           scale: 2,
                         ),
+                        videoBuilder: (url, attributes) {
+                          final controller = YoutubePlayerController(
+                            initialVideoId:
+                                YoutubePlayerController.convertUrlToId(url!)!,
+                          );
+                          return SizedBox(
+                            width: 480,
+                            child: YoutubePlayerIFrame(
+                              controller: controller,
+                              gestureRecognizers: const {},
+                            ),
+                          );
+                        },
                         pConfig: PConfig(
                           linkGesture: (linkWidget, url) {
                             return MouseRegion(
