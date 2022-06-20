@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/portfolio_data.dart';
 import '../components/center_element.dart';
@@ -48,7 +49,16 @@ class PortfolioPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  Flexible(
+                    flex: 0,
+                    child: ElevatedButton(
+                      child: const Text('Back'),
+                      onPressed: () {
+                        Beamer.of(context).beamBack();
+                      },
+                    ),
+                  ),
                 ],
               )
             : Container();
