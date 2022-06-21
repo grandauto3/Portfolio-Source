@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
 
   BeamerDelegate _createBeamerDelegate() {
     return BeamerDelegate(
+      transitionDelegate: const NoAnimationTransitionDelegate(),
+      beamBackTransitionDelegate: const NoAnimationTransitionDelegate(),
       setBrowserTabTitle: false,
       locationBuilder: RoutesLocationBuilder(
         routes: {
