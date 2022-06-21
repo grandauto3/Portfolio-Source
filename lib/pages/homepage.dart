@@ -52,7 +52,7 @@ class MyHomePage extends StatelessWidget {
           onPressed: () {
             onEntryClicked(
               3,
-              'md/test.md',
+              'md/rehago.md',
             );
           },
         ),
