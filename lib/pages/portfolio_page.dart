@@ -1,5 +1,4 @@
 import 'package:beamer/beamer.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:markdown_widget/markdown_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -57,11 +56,9 @@ class PortfolioPage extends StatelessWidget {
                               ),
                             );
                           },
-                          // onLinkTap: (url) => launchUrl(
-                          //   Uri.parse(url!),
-                          // ),
                         ),
-                      ))
+                      ),
+                    )
                   : Container();
             },
           ),

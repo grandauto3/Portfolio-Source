@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/data/portfolio_data.dart';
 import 'package:portfolio/pages/markdown_page.dart';
 import 'package:portfolio/pages/portfolio_page.dart';
 import 'homepage.dart';
