@@ -1,6 +1,5 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/data/portfolio_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../components/home_page_entry.dart';
 import '../components/center_element.dart';
@@ -15,11 +14,37 @@ class MyHomePage extends StatelessWidget {
 
   final OnEntryClickedCallback onEntryClicked;
 
+  int _getAge() {
+    final now = DateTime.now();
+    final birthday = DateTime(1996, 8, 17);
+    //calculate age
+    int age = now.year - birthday.year;
+
+    // check if we are before the actual birthday
+    final isMonthBefore = now.month < birthday.month;
+    final isSameMonthDayBefore =
+        now.month == birthday.month && now.day < birthday.day;
+
+    if (isMonthBefore || isSameMonthDayBefore) {
+      //if we are before the actual birthday we have to subtract a year
+      age--;
+    }
+    return age;
+  }
+
   @override
   Widget build(BuildContext context) {
     return CenterElement(
       children: [
-        const Text('Portfolio'),
+        Text(
+          '''
+Hi, 
+my name is Thilo Simmerlein and ${_getAge()} years old.
+I am a Developer specialized in game development and software architecture.
+This is my protfolio:
+''',
+          style: TextStyle(fontSize: 29),
+        ),
         HomepageEntry(
           title: 'Unity Level Editor',
           onPressed: () {
