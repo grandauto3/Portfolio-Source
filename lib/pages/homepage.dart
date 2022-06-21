@@ -42,7 +42,7 @@ my name is Thilo Simmerlein and ${_getAge()} years old.
 I am a Developer specialized in game development and software architecture.
 This is my protfolio:
 ''',
-          style: TextStyle(fontSize: 29),
+          style: const TextStyle(fontSize: 29),
         ),
         HomepageEntry(
           title: 'Unity Level Editor',
