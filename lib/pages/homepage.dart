@@ -88,12 +88,12 @@ This is my protfolio:
                 Uri.parse('https://github.com/grandauto3/Portfolio-Source'));
           },
         ),
-        HomepageEntry(
-          title: 'Test',
-          onPressed: () {
-            Beamer.of(context, root: true).beamToNamed('/test');
-          },
-        ),
+        // HomepageEntry(
+        //   title: 'Test',
+        //   onPressed: () {
+        //     Beamer.of(context, root: true).beamToNamed('/test');
+        //   },
+        // ),
       ],
     );
   }
