@@ -22,6 +22,9 @@ class HomepageEntry extends StatelessWidget {
         SizedBox(
           width: 300,
           child: ListTile(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
             onTap: onPressed,
             title: Center(child: Text(title)),
             tileColor: Theme.of(context).colorScheme.primary,
