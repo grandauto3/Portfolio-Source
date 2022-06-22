@@ -10,9 +10,11 @@ class PortfolioPage extends StatelessWidget {
   const PortfolioPage({
     Key? key,
     required this.dataPath,
+    required this.pageId,
   }) : super(key: key);
 
-  final String dataPath;
+  final String? dataPath;
+  final int pageId;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class PortfolioPage extends StatelessWidget {
       children: [
         Expanded(
           child: FutureBuilder(
-            future: IOHandler.getStringData(dataPath),
+            future: IOHandler.getStringById(pageId),
             builder: (context, snapshot) {
               return snapshot.hasData
                   ? MarkdownWidget(

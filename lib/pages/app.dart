@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
               ),
           '/p/:pageId': (ctx, state, data) {
             return PortfolioPage(
-              dataPath: data as String,
+              dataPath: data as String?,
+              pageId: int.parse(state.pathParameters.values.first),
             );
           },
           '/test': (ctx, state, data) {
