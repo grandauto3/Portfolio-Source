@@ -39,7 +39,7 @@ class MyHomePage extends StatelessWidget {
           '''
 Hi, 
 my name is Thilo Simmerlein and ${_getAge()} years old.
-I am a Developer specialized in game development and software architecture.
+A Developer specialized in game development and software architecture.
 This is my protfolio:
 ''',
           style: const TextStyle(fontSize: 29),
