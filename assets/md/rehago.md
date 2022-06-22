@@ -3,7 +3,7 @@
 
 [Rehago](https://rehago.eu) takes mirror therapy to VR. Powered by the [Unreal Engine](https://www.unrealengine.com/), Rehago supports and motivates the home training and is used in addtion to traditional therapy sessions.
 
-I worked on Rehago from 03/2019 until 06/2022.
+Since 03/2019 I work on Rehago.
 
 ## My Roles
 
