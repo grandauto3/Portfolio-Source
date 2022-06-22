@@ -70,7 +70,7 @@ class PortfolioPage extends StatelessWidget {
           child: ElevatedButton(
             child: const Text('Back'),
             onPressed: () {
-              Beamer.of(context).beamBack();
+              Beamer.of(context).beamToNamed('/');
             },
           ),
         ),
