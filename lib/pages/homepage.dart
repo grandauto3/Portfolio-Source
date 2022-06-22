@@ -45,6 +45,15 @@ This is my protfolio:
           style: const TextStyle(fontSize: 29),
         ),
         HomepageEntry(
+          title: 'Rehago',
+          onPressed: () {
+            onEntryClicked(
+              3,
+              'md/rehago.md',
+            );
+          },
+        ),
+        HomepageEntry(
           title: 'Unity Level Editor',
           onPressed: () {
             onEntryClicked(
@@ -68,15 +77,6 @@ This is my protfolio:
             onEntryClicked(
               2,
               'md/tents_and_trees.md',
-            );
-          },
-        ),
-        HomepageEntry(
-          title: 'Rehago',
-          onPressed: () {
-            onEntryClicked(
-              3,
-              'md/rehago.md',
             );
           },
         ),
